@@ -1,0 +1,23 @@
+/* 
+	Topic  :Array        
+	Problem: Find the second largest element        
+	Author : JUEL RANA
+	github : Glitch-CoD3
+*/
+
+
+class Solution {
+  public:
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        int n=arr.size()-1;
+      sort(arr.begin(),arr.end());
+      while(arr[n-1]==arr[n]){
+          n--;
+      }
+      
+      if(n==0) return -1;
+      else return arr[n-1];
+    }
+};
