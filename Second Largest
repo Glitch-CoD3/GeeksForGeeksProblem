@@ -21,3 +21,43 @@ class Solution {
       else return arr[n-1];
     }
 };
+
+
+
+//Second Mathod
+
+
+class Solution {
+  public:
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        int n=arr.size();
+        int Max=INT_MIN;
+        for(int i=0 ; i<n; i++){
+            Max=max(Max,arr[i]);
+        }
+        
+        //all max elements will updated to -1
+        for(int i=0; i<n; i++){
+            if(arr[i]==Max){
+                arr[i]=-1;
+            }
+        }
+
+        
+        /*
+          Now find the largest element, which will be the second largest element. 
+          If all elements are the same, the output will be -1,
+          meaning the second largest element does not exist.
+
+	*/
+
+
+        Max=INT_MIN;
+        for(int i=0 ; i<n; i++){
+            Max=max(Max,arr[i]);
+        }
+        return Max;
+    }
+};
